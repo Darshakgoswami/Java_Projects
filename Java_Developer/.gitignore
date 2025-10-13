@@ -1,0 +1,15 @@
+# ------------------------------------
+# Java/Eclipse .gitignore
+# ------------------------------------
+
+# Compiled and binary files (bin folder)
+/bin/
+*.class
+
+# Eclipse-specific configuration files
+.settings/
+.classpath
+.project
+
+# Temporary files
+*.log
