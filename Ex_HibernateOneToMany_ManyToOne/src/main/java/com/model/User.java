@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 // @Entity anotation us used to specify that the class is an entity
 @Entity
-@Table(name = "Users")
+@Table(name = "Users1")
 
 public class User {
 @Id
