@@ -1,3 +1,5 @@
+// Table which belongs to the foreign key is considered as Child-Table.
+
 package com.model;
 
 import java.util.List;
