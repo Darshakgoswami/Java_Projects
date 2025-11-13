@@ -3,6 +3,7 @@ package com.run;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.department.Department;
 import com.phone.Phone;
 
 public class SpringRun {
@@ -12,6 +13,10 @@ public class SpringRun {
 		Phone p = (Phone) context.getBean("phone");
 		System.out.println(p.getPhoneModelno()+" "+p.getPhoneName()+" "+p.getPhoneStorage());
 		p.showPersonDetails();
+		
+		Department dept=(Department) context.getBean("Department");
+		System.out.println(dept.getDept_id()+" "+dept.getDept_name());
+		dept.getEmployeeDetails();
 	}
 
 }
