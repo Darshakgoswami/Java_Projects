@@ -13,8 +13,8 @@
 <property name="phoneModelno" value="16"></property>
 <property name="phoneName" value="iphone"></property>
 <property name="phoneStorage" value="125"></property>
-<property name="person" ref="person"></property>
-</bean>
+<property name="person" ref="person"></property> 
+</bean> 
 
 <bean id="Employee" class="com.employee.Employee">
 <constructor-arg index="0" value="101"></constructor-arg>

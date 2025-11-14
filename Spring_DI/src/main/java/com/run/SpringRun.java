@@ -10,13 +10,14 @@ public class SpringRun {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-		Phone p = (Phone) context.getBean("phone");
+		Phone p = (Phone) context.getBean("phone");    // Type-Casting
 		System.out.println(p.getPhoneModelno()+" "+p.getPhoneName()+" "+p.getPhoneStorage());
 		p.showPersonDetails();
 		
-		Department dept=(Department) context.getBean("Department");
+		//{ beans.xml class ma ref ma person-class ni id pass karvani. }
+		
+		Department dept=(Department) context.getBean("Department");  // Type-Casting
 		System.out.println(dept.getDept_id()+" "+dept.getDept_name());
 		dept.getEmployeeDetails();
 	}
-
 }
