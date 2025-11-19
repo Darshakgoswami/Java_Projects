@@ -1,9 +1,5 @@
 package com.courses;
 
-import java.util.List;
-
-import com.student.Student;
-
 public class Courses {
 private int course_Id;
 private String courseName;

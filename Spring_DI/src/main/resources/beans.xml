@@ -42,7 +42,6 @@
 <list>
 <ref bean="student"></ref>
 <ref bean="course"></ref>
-<ref bean="added"/>
 </list>
 </property>
 </bean>
