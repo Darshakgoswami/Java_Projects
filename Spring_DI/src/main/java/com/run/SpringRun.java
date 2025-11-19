@@ -3,8 +3,8 @@ package com.run;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.added.Class_Result;
 import com.department.Department;
-import com.generics.Arraylist;
 import com.phone.Phone;
 
 public class SpringRun {
@@ -21,7 +21,7 @@ public class SpringRun {
 		System.out.println(dept.getDept_id()+" "+dept.getDept_name());
 		dept.getEmployeeDetails();*/
 		
-		Arraylist al = (Arraylist) context.getBean("generics");
+		Class_Result al = (Class_Result) context.getBean("added");
 		al.DisplayList();
 	}
 }
