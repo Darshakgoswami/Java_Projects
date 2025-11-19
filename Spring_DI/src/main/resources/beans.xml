@@ -37,12 +37,12 @@
 <property name="courseName" value="Java"></property>
 </bean>
 
-<bean id="generics" class="com.generics.Arraylist">
+<bean id="added" class="com.added.Class_Result">
 <property name="list">
 <list>
 <ref bean="student"></ref>
 <ref bean="course"></ref>
-<ref bean="generics"/>
+<ref bean="added"/>
 </list>
 </property>
 </bean>

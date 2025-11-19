@@ -1,8 +1,8 @@
-package com.generics;
+package com.added;
 
 import java.util.List;
 
-public class Arraylist {
+public class Class_Result {
 private List<Object> list;
 
 public List<Object> getList() {
