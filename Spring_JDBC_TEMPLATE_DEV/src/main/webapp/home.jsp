@@ -22,5 +22,6 @@
 </head>
 <body>
 <a href="register">Add Student</a>
+<a href="showdata">show Student</a>
 </body>
 </html>

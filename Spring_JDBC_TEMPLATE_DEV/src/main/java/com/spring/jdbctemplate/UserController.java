@@ -1,3 +1,6 @@
+/* when we input data then use POST
+ and when we show data then use GET*/
+
 package com.spring.jdbctemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 @Controller
 public class UserController {
@@ -25,6 +29,12 @@ public class UserController {
 		return "register";
 	}
 	
-	
-	
+	@RequestMapping(value = "/showdata",method=RequestMethod.GET)
+	public ModelAndView showUsers(HttpServletRequest request, HttpServletResponse response)
+	{
+		ModelAndView mav = new ModelAndView("showUser");
+		mav.addObject("users", userService.getAllUsers());
+		return mav;
+		
+	}
 }
