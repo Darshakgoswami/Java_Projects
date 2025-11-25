@@ -8,4 +8,11 @@ public interface UserDao {
 	
 	//show all users
 	List<User> getAllUsers();
+	
+	//delete method
+		void delete(int id);
+		
+	//edit method
+	User getUserById(int id);
+	void update(User user);
 }
