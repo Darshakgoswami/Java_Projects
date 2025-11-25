@@ -28,4 +28,25 @@ public class UserServiceImpl implements UserService{
 		return userDao.getAllUsers();
 	}
 
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		userDao.delete(id);
+	}
+
+
+	@Override
+	public User getUserById(int id) {
+		// TODO Auto-generated method stub
+		return userDao.getUserById(id);
+	}
+
+
+	@Override
+	public void update(User user) {
+		// TODO Auto-generated method stub
+		userDao.update(user);
+	}
+
 }
