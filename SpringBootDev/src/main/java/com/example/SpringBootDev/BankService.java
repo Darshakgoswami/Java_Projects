@@ -1,5 +1,7 @@
 package com.example.SpringBootDev;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,42 +15,33 @@ public class BankService {
 	{
 		return bankrepository.saveAndFlush(bank);
 	}
-	// Inside public class BankService { ... }
-
-	// Update method
-	public Bank updateBank(int accountID, Bank updatedBankDetails) {
-	    // Find the existing entity by ID
-	    return bankrepository.findById(accountID)
-	        .map(existingBank -> {
-	            // Update the fields on the existing entity
-	            existingBank.setBalance(updatedBankDetails.getBalance());
-	            existingBank.setAccountNumber(updatedBankDetails.getAccountNumber());
-	            existingBank.setAccountHolderName(updatedBankDetails.getAccountHolderName());
-	            
-	            // Save and return the updated entity
-	            return bankrepository.save(existingBank);
-	        })
-	        .orElseThrow(() -> new RuntimeException("Bank Account not found with ID: " + accountID));
-	}
-
-	// Delete method
-	public void deleteBank(int accountID) {
-	    if (!bankrepository.existsById(accountID)) {
-	        throw new RuntimeException("Bank Account not found with ID: " + accountID);
-	    }
-	    bankrepository.deleteById(accountID);
+	 // get all data method
+	public List<Bank> getAllBankData()
+	{
+		return bankrepository.findAll();
 	}
 	
-	// Inside public class BankService { ... }
-
-	// Read all method
-	public java.util.List<Bank> getAllBanks() {
-	    return bankrepository.findAll();
+	// get bank by id method
+	public Bank getBankbyId(int id)
+	{
+		return bankrepository.findById(id).orElse(null);	
 	}
-
-	// Read by ID method
-	public Bank getBankById(int accountID) {
-	    return bankrepository.findById(accountID)
-	        .orElseThrow(() -> new RuntimeException("Bank Account not found with ID: " + accountID));
+	
+	// update method
+	public Bank updateBank(int id, Bank bank)
+	{
+		Bank existingBank=bankrepository.findById(id).orElse(null);
+		if(existingBank!=null)
+		{
+			existingBank.setAccountHolderName(bank.getAccountHolderName());
+			existingBank.setAccountNumber(bank.getAccountNumber());
+			existingBank.setAccountID(bank.getAccountID());
+			existingBank.setBalance(bank.getBalance());
+			return bankrepository.saveAndFlush(existingBank);
+		}
+		else
+		{
+			return null;
+		}
 	}
 }
