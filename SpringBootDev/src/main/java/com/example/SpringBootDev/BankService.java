@@ -51,4 +51,10 @@ public class BankService {
 	{
 		bankrepository.deleteById(id);
 	}
+	
+	// add multiple bank records
+	public List<Bank> addmultipleBanks(List<Bank> banks)
+	{
+		return bankrepository.saveAll(banks);
+	}
 }
