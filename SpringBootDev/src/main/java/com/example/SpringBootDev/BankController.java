@@ -66,4 +66,11 @@ public class BankController {
 		bankservice.deleteBank(id);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@PostMapping("/Banks")
+	public ResponseEntity<List<Bank>> addmulbanks(@RequestBody List<Bank> banks)
+	{
+		List<Bank> banklist = bankservice.addmultipleBanks(banks);
+		return ResponseEntity.ok(banklist);
+	}
 }
