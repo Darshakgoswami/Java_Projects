@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable; 
 import org.springframework.web.bind.annotation.PutMapping;    
 import org.springframework.web.bind.annotation.DeleteMapping; 
-import org.springframework.web.bind.annotation.GetMapping; // <- ADD THIS IMPORT
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -60,5 +60,10 @@ public class BankController {
 		}
 	}
 	
-	
+	@DeleteMapping("/Bank/{id}")
+	public ResponseEntity<Void> deleteBank(@PathVariable int id) 
+	{
+		bankservice.deleteBank(id);
+		return ResponseEntity.noContent().build();
+	}
 }
