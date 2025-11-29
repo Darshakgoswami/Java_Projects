@@ -15,6 +15,7 @@ public class BankService {
 	{
 		return bankrepository.saveAndFlush(bank);
 	}
+	
 	 // get all data method
 	public List<Bank> getAllBankData()
 	{
@@ -43,5 +44,11 @@ public class BankService {
 		{
 			return null;
 		}
+	}
+	
+	// delete by id
+	public void deleteBank(int id)
+	{
+		bankrepository.deleteById(id);
 	}
 }
