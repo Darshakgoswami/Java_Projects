@@ -15,7 +15,6 @@ public class EmailServiceClass implements EmailService
 	
 	@Value("${spring.mail.username}")
 	private String sender;
-	
 	@Override
 	public String sendSimpleMail(UserEmail details) {
 		// TODO Auto-generated method stub
