@@ -1,5 +1,7 @@
 package com.example.SpringNestedjson;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +20,7 @@ public class OrderEntity {
 	private String order_name;
 	@ManyToOne
 	@JoinColumn(name="cust_id")
+	@JsonBackReference
 	private CustomerEntity customerentity;
 	public int getOrder_id() {
 		return order_id;

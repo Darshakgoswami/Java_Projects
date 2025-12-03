@@ -2,6 +2,9 @@ package com.example.SpringNestedjson;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,6 +20,7 @@ public class CustomerEntity {
 	@Column
 	private String cust_name;
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "customerentity")
+	@JsonManagedReference
 	private List<OrderEntity> orderentity;
 	public int getCust_id() {
 		return cust_id;
