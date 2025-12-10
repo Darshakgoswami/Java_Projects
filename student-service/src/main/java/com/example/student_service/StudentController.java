@@ -3,6 +3,8 @@ package com.example.student_service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,5 +22,11 @@ private StudentService studentService;
 public ResponseEntity<?> createStudent(@RequestBody Student student) {
 	return studentService.createStudent(student);
 	
-}	
+}
+
+@GetMapping("/{id}")
+public ResponseEntity<?> fetchStudentById(@PathVariable String id)
+{
+	return studentService.fetchStudentById(id);
+}
 }
