@@ -18,7 +18,7 @@ public class StudentController {
 private StudentService studentService;
 
 
-@PostMapping("/add")
+@PostMapping
 public ResponseEntity<?> createStudent(@RequestBody Student student) {
 	return studentService.createStudent(student);
 	

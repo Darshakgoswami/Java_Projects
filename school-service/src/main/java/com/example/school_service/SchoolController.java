@@ -20,7 +20,7 @@ public class SchoolController
 	@Autowired
 	private SchoolService schoolService;
 	
-	@PostMapping("/add")
+	@PostMapping
 	public ResponseEntity<School> addSchool(@RequestBody School school)
 	{
 		School sc=schoolService.addSchool(school);

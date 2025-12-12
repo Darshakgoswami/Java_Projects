@@ -35,7 +35,7 @@ public class StudentService {
 		
 		if(student.isPresent()) {
             School school = null; // Initialize school object to null
-            String schoolServiceUrl = "http://localhost:8080/schools/" + student.get().getSchoolId();
+            String schoolServiceUrl = "http://SCHOOL-SERVICE/schools/" + student.get().getSchoolId();
 
             // --- FIX: Wrap external service call in try-catch ---
             try {
