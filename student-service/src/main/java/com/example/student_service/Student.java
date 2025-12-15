@@ -16,11 +16,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 public class Student {
-
 	
     @Id
     @GeneratedValue
-	private String id;
+	private Long id;
     @Column
 	private String name;
     @Column

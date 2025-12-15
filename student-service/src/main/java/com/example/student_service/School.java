@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class School {
- private int id;
+ private Integer id;
  private String schoolName;
  private String location;
  private String principalName;
