@@ -1,5 +1,3 @@
-// student-service/src/main/java/com/example/student_service/StudentService.java
-
 package com.example.student_service;
 
 import java.util.Optional;
@@ -76,4 +74,31 @@ public class StudentService {
         	return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    
+    public ResponseEntity<?> deleteStudentById(Long id){
+		if (studentRepository.existsById(id)) {
+			studentRepository.deleteById(id);
+			return new ResponseEntity<>("Student deleted Successfully",HttpStatus.OK);
+		}
+		else {
+			return new ResponseEntity<>("Student not found",HttpStatus.NOT_FOUND);
+		}
+    }
+		public Student updateStudent(Long id, Student updatedStudentData) 
+		{
+	        Optional<Student> existingStudentOptional = studentRepository.findById(id);
+	        if (existingStudentOptional.isPresent()) 
+	        {
+	            Student existingStudent = existingStudentOptional.get();
+	            existingStudent.setName(updatedStudentData.getName());
+	            existingStudent.setAge(updatedStudentData.getAge());
+	            existingStudent.setGender(updatedStudentData.getGender());
+	            existingStudent.setSchoolId(updatedStudentData.getSchoolId());
+	            return studentRepository.save(existingStudent);
+	        } 
+	        else 
+	        {
+	            throw new RuntimeException("Student not found with ID: " + id);
+	        }
+		}
 }
