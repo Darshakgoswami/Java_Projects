@@ -1,7 +1,6 @@
 package com.example.student_service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -44,9 +43,8 @@ public class StudentController {
     }   
     
     @PutMapping("/{id}")
-    public ResponseEntity<Student> updateStudent(@PathVariable Long id,@RequestBody Student updatedStudent) 
+    public ResponseEntity<?> updateStudent(@PathVariable Long id, @RequestBody Student updatedStudent) 
     {
-        Student student = studentService.updateStudent(id, updatedStudent);
-        return new ResponseEntity<>(student, HttpStatus.OK);
+        return studentService.updateStudent(id, updatedStudent);
     }
 }
